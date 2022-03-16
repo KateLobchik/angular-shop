@@ -1,0 +1,85 @@
+.background-pink {
+  width: 100%;
+  height: 3.5rem;
+
+  .blur {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+}
+
+.logo-wrapper {
+  padding: 0 1rem;
+  width: fit-content;
+  height: 100%;
+  background-color: #15265C;
+  color: #2EE09A;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -2rem;
+    width: 4rem;
+    height: 100%;
+    background-color: #2EE09A;
+    //border-radius: 50%;
+    filter: blur(4rem);
+    z-index: -1;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  list-style: none;
+}
+
+.nav__item {
+  padding: .5rem 1.5rem;
+  font-size: .5rem;
+  letter-spacing: 2px;
+  opacity: .8;
+}
+
+.card {
+  position: absolute;
+  top: 25%;
+  right: 15%;
+  width: 45%;
+  height: 40%;
+  background-image: url("../assets/00-hero-elderwood-ornn-final.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  border-radius: 5px;
+}
+
+.image-wrapper {
+  position: absolute;
+  top: -55%;
+  right: 0;
+  margin-left: auto;
+  width: 40%;
+  height: auto;
+  max-height: 200%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+}
+
+
+

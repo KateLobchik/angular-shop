@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --primory-color: #dc3545;
+  --dark-color: #333333;
+  --light-color: #f4f4f4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Titillium Web', 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #15265C;
+  color: white;
+  overflow: hidden;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    //top: 0;
+    //left: 0;
+    right: -10rem;
+    bottom: -10rem;
+    width: 20rem;
+    height: 20rem;
+    background-color: #EF84F5;
+    border-radius: 50%;
+    filter: blur(20rem);
+    z-index: -1;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -5rem;
+    left: -15rem;
+    width: 30rem;
+    height: 10rem;
+    background-color: #2EE09A;
+    border-radius: 50%;
+    filter: blur(13rem);
+    z-index: -1;
+  }
+}
