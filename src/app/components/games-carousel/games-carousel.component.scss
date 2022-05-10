@@ -1,0 +1,119 @@
+.list-game-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-game-nav__all {
+  color:inherit;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -56%;
+    //transform: translateY(-50%);
+    width: 100%;
+    height: 100%;
+    background-image: url("/assets/images/icons/arrow-right.svg");
+    background-repeat: no-repeat;
+    background-size: 30% 30%;
+    background-position: 50% 50%;
+    transition: right .25s ease-in-out;
+  }
+
+  &:hover,
+  &:focus {
+    &:after {
+      right: -60%;
+    }
+  }
+}
+
+.list-game-nav__button {
+  width: 1.7rem;
+  height: 1.7rem;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  position: relative;
+  transition: background-color .25s ease-in-out;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/assets/images/icons/arrow-right.svg");
+    background-repeat: no-repeat;
+    background-size: 40% 40%;
+    background-position: 50% 50%;
+  }
+
+  &-back {
+    margin-right: .7rem;
+    &:after {
+      transform: rotate(180deg);
+    }
+  }
+
+  &:hover,
+  &:focus {
+    background-color: rgba(255, 255, 255, 0.2);;
+  }
+}
+
+
+
+.list-game {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2rem;
+  padding: 1rem 0;
+  width: 100%;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.list-game__item {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.list-game__img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.list-game__name {
+  width: 100%;
+  padding: 0 .4rem .4rem 0;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list-game__price-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.list-game__sale {
+  padding: .2rem .5rem;
+  background-color: blue;
+  border-radius: 5px;
+}
+
+.list-game__old-price {
+  opacity: .6;
+}

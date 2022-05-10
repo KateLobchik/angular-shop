@@ -1,0 +1,33 @@
+<div class="list-game-nav">
+  <a class="list-game-nav__all" href="#">
+    Наиболее популярные
+  </a>
+  <div *carousel="let item of list; next as next; back as back;">
+
+
+  <div class="list-game-nav__button-wrapper">
+    <button class="list-game-nav__button list-game-nav__button-back"
+            (click)="back()"
+    >
+    </button>
+    <button class="list-game-nav__button list-game-nav__button-next"
+            (click)="next()">
+    </button>
+  </div>
+
+  <ul class="list-game">
+    <li class="list-game__item">
+      <img class="list-game__img" [src]="item.url">
+      <div class="list-game__info-wrapper">
+        <p class="list-game__name">
+          {{item.name}}
+        </p>
+        <div class="list-game__price-wrapper">
+          <p class="list-game__sale">{{item.sale}}</p>
+          <p class="list-game__old-price"><s>{{item.oldPrice | currency: 'RUB':'symbol-narrow' : '1.0-0'}}</s></p>
+          <p class="list-game__new-price">{{item.newPrice | currency: 'RUB':'symbol-narrow': '1.0-0'}}</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
