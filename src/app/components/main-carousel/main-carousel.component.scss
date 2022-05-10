@@ -1,0 +1,186 @@
+
+.carousel {
+  display: flex;
+  gap: 2rem;
+  padding: 4rem 0;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.carousel__main-images-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel__main-img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0;
+  opacity: 0;
+  height: 100%;
+}
+
+.carousel__main-img-wrapper--current {
+  opacity: 1;
+  width: 100%;
+}
+
+.carousel__main-img-link {
+  font-size: 0;
+  line-height: 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.carousel__main-img {
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: slideMainImgTimer;
+}
+
+.carousel__game-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1rem;
+  width: 32%;
+  height: auto;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.carousel__game {
+  display: flex;
+  padding: 4%;
+  width: 100%;
+  height: 25%;
+  background-color: transparent;
+  border-radius: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.carousel__game-li {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.carousel__game--current {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 200ms linear;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-name: slideTimer;
+  }
+
+  .carousel__img {
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-name: slideImgTimer;
+  }
+}
+
+.carousel__image-wrapper {
+  display: flex;
+  align-items: center;
+  width: 10%;
+  height: 100%;
+  position: relative;
+}
+
+.carousel__img {
+  position: absolute;
+  width: auto;
+  height: 100%;
+  border-radius: 3px;
+}
+
+.carousel__game-name {
+  position: absolute;
+  left: 26%;
+  font-size: 1.1rem;
+  padding: 0 5%;
+
+  @media(max-width: 1400px) {
+    font-size: 1rem;
+  }
+
+  @media(max-width: 1200px) {
+    font-size: 0.8rem;
+  }
+
+  @media(max-width: 1000px) {
+    font-size: 0.6rem;
+  }
+}
+
+@keyframes slideMainImgTimer {
+  0% {
+    margin-left: 0%;
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  98% {
+    margin-left: 0%;
+    opacity: 1;
+  }
+  100% {
+    margin-left: -100%;
+    opacity: 0;
+  }
+}
+
+@keyframes slideTimer {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes slideImgTimer {
+  0% {
+    height: 100%;
+  }
+  1% {
+    height: 105%;
+  }
+  2% {
+    height: 100%;
+  }
+}
+
