@@ -1,3 +1,4 @@
+$timer: 8s;
 
 .carousel {
   display: flex;
@@ -25,11 +26,6 @@
   height: 100%;
 }
 
-.carousel__main-img-wrapper--current {
-  opacity: 1;
-  width: 100%;
-}
-
 .carousel__main-img-link {
   font-size: 0;
   line-height: 0;
@@ -42,10 +38,25 @@
   width: 100%;
   height: auto;
   border-radius: 10px;
-  animation-duration: 8s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-name: slideMainImgTimer;
+}
+
+.carousel__main-img-wrapper--current {
+  opacity: 1;
+  width: 100%;
+
+  .carousel__main-img {
+    animation-duration: $timer;
+    animation-timing-function: linear;
+    animation-name: slideMainImgTimer;
+  }
+}
+
+.carousel__main-img-wrapper--click {
+  .carousel__main-img {
+    animation-duration: 160ms;
+    animation-timing-function: linear;
+    animation-name: slideMainImgTimerClick;
+  }
 }
 
 .carousel__game-list {
@@ -69,6 +80,11 @@
   border-radius: 5px;
   box-sizing: border-box;
   cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.carousel__game:not(.carousel__game--current):hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .carousel__game-li {
@@ -93,16 +109,14 @@
     left: 0;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.1);
-    animation-duration: 8s;
+    animation-duration: $timer;
     animation-timing-function: linear;
-    animation-iteration-count: infinite;
     animation-name: slideTimer;
   }
 
   .carousel__img {
-    animation-duration: 8s;
+    animation-duration: $timer;
     animation-timing-function: linear;
-    animation-iteration-count: infinite;
     animation-name: slideImgTimer;
   }
 }
@@ -125,8 +139,9 @@
 .carousel__game-name {
   position: absolute;
   left: 26%;
-  font-size: 1.1rem;
   padding: 0 5%;
+  font-size: 1.1rem;
+  color: #FFFFFF;
 
   @media(max-width: 1400px) {
     font-size: 1rem;
@@ -150,6 +165,17 @@
     opacity: 1;
   }
   98% {
+    margin-left: 0%;
+    opacity: 1;
+  }
+  100% {
+    margin-left: -100%;
+    opacity: 0;
+  }
+}
+
+@keyframes slideMainImgTimerClick {
+  0% {
     margin-left: 0%;
     opacity: 1;
   }

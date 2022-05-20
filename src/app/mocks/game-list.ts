@@ -42,18 +42,32 @@ export const gamesList = [
     newPrice: 1470
   },
   {
-    name: 'Yooka-Laylee and the Impossible Lair',
-    url: 'assets/images/game4.jpg',
-    sale: '-25%',
-    oldPrice: 2500,
-    newPrice: 1875
+    name: 'Dark Light',
+    url: 'assets/images/game3.webp',
+    sale: '-30%',
+    oldPrice: 2100,
+    newPrice: 1470
   },
+  // {
+  //   name: 'Yooka-Laylee and the Impossible Lair',
+  //   url: 'assets/images/game4.jpg',
+  //   sale: '-25%',
+  //   oldPrice: 2500,
+  //   newPrice: 1875
+  // },
   {
     name: 'Operation: Tango',
     url: 'assets/images/game7.webp',
     sale: '-30%',
     oldPrice: 2100,
     newPrice: 1470
+  },
+  {
+    name: 'The Long Dark',
+    url: 'assets/images/game8.webp',
+    sale: '-40%',
+    oldPrice: 1900,
+    newPrice: 1140
   },
   {
     name: 'The Long Dark',

@@ -7,6 +7,7 @@ import {NavModule} from "./components/nav/nav.module";
 import {HeaderModule} from "./components/header/header.module";
 import {MainCarouselModule} from "./components/main-carousel/main-carousel.module";
 import {GamesCarouselModule} from "./components/games-carousel/games-carousel.module";
+import {FooterModule} from "./components/footer/footer.module";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {GamesCarouselModule} from "./components/games-carousel/games-carousel.mo
     HeaderModule,
     MainCarouselModule,
     GamesCarouselModule,
+    FooterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

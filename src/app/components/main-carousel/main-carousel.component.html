@@ -2,28 +2,40 @@
 
   <div class="carousel__main-images-wrapper">
     <ng-container *ngFor="let game of mainGamesList">
-    <div class="carousel__main-img-wrapper"
-         [class.carousel__main-img-wrapper--current]="game.img.main === currentGameImg"
-    >
-      <a class="carousel__main-img-link">
-        <img class="carousel__main-img" [src]="game.img.main">
-      </a>
-    </div>
+      <div class="carousel__main-img-wrapper"
+           [class.carousel__main-img-wrapper--current]="game.img.main === currentGameImg"
+           [class.carousel__main-img-wrapper--click]="clickNext"
+      >
+        <a class="carousel__main-img-link" href="#">
+          <img class="carousel__main-img" [src]="game.img.main">
+        </a>
+      </div>
     </ng-container>
   </div>
 
   <ul class="carousel__game-list">
     <ng-container *ngFor="let game of mainGamesList; let index = index">
-      <div class="carousel__game"
-            [class.carousel__game--current]="game.name === currentGameName"
-      >
-        <li class="carousel__game-li" (click)="changeCurrentGameIndex(index)">
-        <div class="carousel__image-wrapper">
-          <img class="carousel__img" [src]="game.img.promo">
+      <ng-container *ngIf="game.name !== currentGameName; else link">
+        <div class="carousel__game" (click)="click(index)"
+        >
+          <li class="carousel__game-li">
+          <div class="carousel__image-wrapper">
+            <img class="carousel__img" [src]="game.img.promo">
+          </div>
+          <p class="carousel__game-name">{{game.name}}</p>
+          </li>
         </div>
-        <p class="carousel__game-name">{{game.name}}</p>
-        </li>
-      </div>
+      </ng-container>
+      <ng-template #link>
+        <a class="carousel__game carousel__game--current" href="#">
+          <li class="carousel__game-li">
+          <div class="carousel__image-wrapper">
+            <img class="carousel__img" [src]="game.img.promo">
+          </div>
+          <p class="carousel__game-name">{{game.name}}</p>
+          </li>
+        </a>
+      </ng-template>
     </ng-container>
   </ul>
 
