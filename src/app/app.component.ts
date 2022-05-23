@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { gamesList } from "./mocks/game-list";
 
 @Component({
   selector: 'app-root',
@@ -8,7 +7,6 @@ import { gamesList } from "./mocks/game-list";
 })
 export class AppComponent implements  OnInit {
 
-  mockGamesList = gamesList;
 
   constructor() {
   }

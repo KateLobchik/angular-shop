@@ -75,7 +75,7 @@ $widthTranslate: calc((100vw - 14rem - (2rem * 4)) / 5 * -1 - 2rem);
   position: relative;
   overflow: hidden;
   padding: 0 0 3.5rem;
-  width: calc(100vw - 14rem);
+  width: 100%;
 }
 
 .list-game {
@@ -83,20 +83,22 @@ $widthTranslate: calc((100vw - 14rem - (2rem * 4)) / 5 * -1 - 2rem);
   justify-content: flex-start;
   align-items: center;
   padding: 1rem 0;
-  width: calc(200% + 4rem);
+  width: calc(200% + 2rem);
   list-style: none;
   box-sizing: border-box;
   transition: all 1s ease-in-out;
 }
 
 .list-game__item {
-  margin-right: 2rem;
-  max-width: calc(200% / 10);
+  min-height: 100px;
+  max-width: (100% / 5);
   box-sizing: border-box;
   overflow: hidden;
 }
 
 .list-game__link {
+  display: grid;
+  margin-right: 1rem;
   text-decoration: none;
   color: #FFFFFF;
 }
@@ -107,45 +109,41 @@ $widthTranslate: calc((100vw - 14rem - (2rem * 4)) / 5 * -1 - 2rem);
   border-radius: 5px;
   overflow: hidden;
   position: relative;
-
-  &:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.1);
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
-  }
 }
 
 .list-game__img {
   width: 100%;
 }
 
-.list-game__link:hover {
+//.list-game__link:hover {
+//
+//  .list-game__img-wrapper {
+//    &:after {
+//      opacity: 1;
+//    }
+//  }
+//}
+//
 
-  .list-game__img-wrapper {
-    &:after {
-      opacity: 1;
-    }
-  }
+.list-game__info-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .list-game__name {
   width: 100%;
-  padding: 0 .4rem .4rem 0;
+  padding: 0 0 .4rem 0;
   font-size: 1rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  box-sizing: border-box;
 }
 
 .list-game__price-info {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   width: 100%;

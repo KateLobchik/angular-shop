@@ -12,8 +12,12 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
-  height: 100vh;
+  height: 100%;
   font-family: 'Titillium Web', 'Roboto', sans-serif;
   font-size: 1rem;
   line-height: 1.6;

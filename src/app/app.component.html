@@ -1,12 +1,11 @@
 <div class="page">
-  <app-header class="header"></app-header>
+    <app-header></app-header>
 
-  <div class="main">
-    <app-main-carousel></app-main-carousel>
-    <app-games-carousel [list]="mockGamesList"></app-games-carousel>
-  </div>
+    <div class="page__wrapper">
+      <router-outlet></router-outlet>
+    </div>
 
-  <app-footer></app-footer>
+    <app-footer></app-footer>
 </div>
 
 
