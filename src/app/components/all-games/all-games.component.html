@@ -1,0 +1,151 @@
+<section class="group-sort">
+  <h3 class="group-sort__title">Популярные жанры</h3>
+  <ul class="group-sort__list">
+    <li class="group-sort__item">
+      <a class="group-sort__link">
+        <div class="group-sort__img-list">
+          <div class="group-sort__img-wrapper">
+            <img class="group-sort__img" src="assets/images/game3.webp">
+          </div>
+          <div class="group-sort__img-wrapper img-main">
+            <img class="group-sort__img" src="assets/images/game2.webp">
+          </div>
+          <div class="group-sort__img-wrapper">
+            <img class="group-sort__img" src="assets/images/game1.jpg">
+          </div>
+        </div>
+        <p class="group-sort__name">Экшн</p>
+      </a>
+    </li>
+    <li class="group-sort__item">
+      <a class="group-sort__link">
+        <div class="group-sort__img-list">
+          <div class="group-sort__img-wrapper">
+            <img class="group-sort__img" src="assets/images/game4.jpg">
+          </div>
+          <div class="group-sort__img-wrapper img-main">
+            <img class="group-sort__img" src="assets/images/game5.webp">
+          </div>
+          <div class="group-sort__img-wrapper">
+            <img class="group-sort__img" src="assets/images/game6.webp">
+          </div>
+        </div>
+        <p class="group-sort__name">Казуальные</p>
+      </a>
+    </li>
+    <li class="group-sort__item">
+      <a class="group-sort__link">
+        <div class="group-sort__img-list">
+          <div class="group-sort__img-wrapper">
+            <img class="group-sort__img" src="assets/images/game7.webp">
+          </div>
+          <div class="group-sort__img-wrapper img-main">
+            <img class="group-sort__img" src="assets/images/game8.webp">
+          </div>
+          <div class="group-sort__img-wrapper">
+            <img class="group-sort__img" src="assets/images/game9.jpg">
+          </div>
+        </div>
+        <p class="group-sort__name">Инди</p>
+      </a>
+    </li>
+    <li class="group-sort__item">
+      <a class="group-sort__link">
+        <div class="group-sort__img-list">
+          <div class="group-sort__img-wrapper">
+            <img class="group-sort__img" src="assets/images/game2.webp">
+          </div>
+          <div class="group-sort__img-wrapper img-main">
+            <img class="group-sort__img" src="assets/images/game7.webp">
+          </div>
+          <div class="group-sort__img-wrapper">
+            <img class="group-sort__img" src="assets/images/game3.webp">
+          </div>
+        </div>
+        <p class="group-sort__name">Стратегия</p>
+      </a>
+    </li>
+  </ul>
+</section>
+
+<section class="all-games">
+  <div class="all-games__games games">
+    <div class="games__sort">
+      <div class="games__sort-dropdown dropdown">
+        <p class="dropdown__label">Сортировка:</p>
+        <p class="dropdown__select-item">Новинки</p>
+      </div>
+    </div>
+      <ul class="games__games-list">
+        <li class="list-game__item" *ngFor="let item of list">
+          <a class="list-game__link" href="#">
+            <div class="list-game__img-wrapper">
+              <img class="list-game__img" [src]="item.url">
+            </div>
+            <div class="list-game__info-wrapper">
+              <p class="list-game__name">
+                {{item.name}}
+              </p>
+              <div class="list-game__price-info">
+                <p class="list-game__sale">{{item.sale}}</p>
+                <div class="list-game__price-wrapper">
+                  <p class="list-game__price list-game__old-price"><s>{{item.oldPrice | currency: 'RUB':'symbol-narrow' : '1.0-0'}}</s></p>
+                  <p class="list-game__price list-game__new-price">{{item.newPrice | currency: 'RUB':'symbol-narrow': '1.0-0'}}</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+  </div>
+
+  <div class="all-games__filters filters">
+    <p class="filters__title">Фильтры</p>
+    <div class="filters__search">
+      <input class="filters__search-input" type="text">
+    </div>
+    <div class="filters__filters-list">
+
+      <div class="filters__filters-item">
+        <button class="filters__filters-name" type="button">Цена</button>
+        <ul class="filters__options">
+          <li class="filters__options-item">Бесплатно</li>
+          <li class="filters__options-item">Ниже 750</li>
+          <li class="filters__options-item">Ниже 2000</li>
+          <li class="filters__options-item">Выше 1500</li>
+          <li class="filters__options-item">Скидка</li>
+        </ul>
+      </div>
+
+      <div class="filters__filters-item">
+        <button class="filters__filters-name" type="button">Жанр</button>
+        <ul class="filters__options">
+          <li class="filters__options-item">Головоломки</li>
+          <li class="filters__options-item">Инди</li>
+          <li class="filters__options-item">Исследования</li>
+          <li class="filters__options-item">Ролевые</li>
+          <li class="filters__options-item">Симулятор</li>
+          <li class="filters__options-item">Экшн</li>
+        </ul>
+      </div>
+
+      <div class="filters__filters-item">
+        <button class="filters__filters-name" type="button">Особенности</button>
+        <ul class="filters__options">
+          <li class="filters__options-item">Виртуальная реальность</li>
+          <li class="filters__options-item">Достижения</li>
+          <li class="filters__options-item">Многопользовательская</li>
+          <li class="filters__options-item">Одиночная</li>
+        </ul>
+      </div>
+
+      <div class="filters__filters-item">
+        <button class="filters__filters-name" type="button">Платформа</button>
+        <ul class="filters__options">
+          <li class="filters__options-item">Mac OS</li>
+          <li class="filters__options-item">Windows</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
