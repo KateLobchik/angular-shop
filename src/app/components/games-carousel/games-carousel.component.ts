@@ -14,10 +14,6 @@ export class GamesCarouselComponent<T> implements OnInit {
 
   @Input() list: any;
 
-  private items$ = new BehaviorSubject<T[] | null>(null);
-  private currentIndex$ = new BehaviorSubject<number>(0);
-  private destroy$ = new Subject<void>();
-
   constructor() { }
 
   ngOnInit(): void {

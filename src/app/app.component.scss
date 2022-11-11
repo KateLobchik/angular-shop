@@ -12,34 +12,6 @@
     height: 100%;
     position: relative;
     box-sizing: border-box;
-
-    &:after {
-      content: "";
-      position: absolute;
-      //top: 0;
-      //left: 0;
-      right: -5rem;
-      top: 100%;
-      width: 10rem;
-      height: 40rem;
-      background-color: #EF84F5;
-      border-radius: 50%;
-      filter: blur(8rem);
-      z-index: -1;
-    }
-
-    &:before {
-      content: "";
-      position: absolute;
-      top: -2.5rem;
-      left: -15rem;
-      width: 30rem;
-      height: 5rem;
-      background-color: #2EE09A;
-      border-radius: 50%;
-      filter: blur(9rem);
-      z-index: -1;
-    }
   }
 }
 

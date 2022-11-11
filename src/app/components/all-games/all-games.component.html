@@ -71,32 +71,22 @@
 <section class="all-games">
   <div class="all-games__games games">
     <div class="games__sort">
-      <div class="games__sort-dropdown dropdown">
-        <p class="dropdown__label">Сортировка:</p>
-        <p class="dropdown__select-item">Новинки</p>
-      </div>
+      <dropdown [options]="sortList"
+                label="Сортировка:"
+                [(ngModel)]="selectItem"></dropdown>
     </div>
-      <ul class="games__games-list">
-        <li class="list-game__item" *ngFor="let item of list">
-          <a class="list-game__link" href="#">
-            <div class="list-game__img-wrapper">
-              <img class="list-game__img" [src]="item.url">
-            </div>
-            <div class="list-game__info-wrapper">
-              <p class="list-game__name">
-                {{item.name}}
-              </p>
-              <div class="list-game__price-info">
-                <p class="list-game__sale">{{item.sale}}</p>
-                <div class="list-game__price-wrapper">
-                  <p class="list-game__price list-game__old-price"><s>{{item.oldPrice | currency: 'RUB':'symbol-narrow' : '1.0-0'}}</s></p>
-                  <p class="list-game__price list-game__new-price">{{item.newPrice | currency: 'RUB':'symbol-narrow': '1.0-0'}}</p>
-                </div>
-              </div>
-            </div>
-          </a>
-        </li>
-      </ul>
+
+    <ul class="games__games-list">
+      <li class="list-game__item" *ngFor="let item of list">
+        <card
+          [name]="item.name"
+          [imgUrl]="item.url"
+          [sale]="item.sale"
+          [oldPrice]="item.oldPrice"
+          [newPrice]="item.newPrice"
+        ></card>
+      </li>
+    </ul>
   </div>
 
   <div class="all-games__filters filters">

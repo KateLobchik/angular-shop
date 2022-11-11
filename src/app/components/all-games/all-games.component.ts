@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, HostListener, Input, OnChanges, OnInit} from '@angular/core';
 import {gamesList} from "../../mocks/game-list";
 
 @Component({
@@ -6,13 +6,28 @@ import {gamesList} from "../../mocks/game-list";
   templateUrl: './all-games.component.html',
   styleUrls: ['./all-games.component.scss']
 })
-export class AllGamesComponent implements OnInit {
-
+export class AllGamesComponent {
   @Input() list = gamesList;
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  sortList = sortList;
+  selectItem = this.sortList[0];
 }
+
+const sortList = [
+  {
+    label: 'Новинки',
+    code: 'new'
+  },
+  {
+    label: 'По алфавиту',
+    code: 'abc'
+  },
+  {
+    label: 'Цена: по возрастанию',
+    code: 'priceup'
+  },
+  {
+    label: 'Цена: по убыванию',
+    code: 'pricedown'
+  }
+]

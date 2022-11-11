@@ -6,6 +6,9 @@ import {MainPageComponent} from "./components/main-page/main-page.component";
 import {GamesCarouselModule} from "./components/games-carousel/games-carousel.module";
 import {MainCarouselModule} from "./components/main-carousel/main-carousel.module";
 import {CommonModule} from "@angular/common";
+import {CardModule} from "./components/card/card.module";
+import {DropdownModule} from "./components/dropdown/dropdown.module";
+import {FormsModule} from "@angular/forms";
 
 const routes: Routes = [
   {
@@ -23,7 +26,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), GamesCarouselModule, MainCarouselModule, CommonModule],
+  imports: [RouterModule.forRoot(routes), GamesCarouselModule, MainCarouselModule, CommonModule, CardModule, DropdownModule, FormsModule],
   declarations: [
     MainPageComponent,
     AllGamesComponent,

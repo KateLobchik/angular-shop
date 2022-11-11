@@ -58,14 +58,14 @@ export const gamesList = [
   {
     name: 'Operation: Tango',
     url: 'assets/images/game7.webp',
-    sale: '-30%',
+    // sale: '-30%',
     oldPrice: 2100,
     newPrice: 1470
   },
   {
     name: 'The Long Dark',
     url: 'assets/images/game8.webp',
-    sale: '-40%',
+    // sale: '',
     oldPrice: 1900,
     newPrice: 1140
   },
