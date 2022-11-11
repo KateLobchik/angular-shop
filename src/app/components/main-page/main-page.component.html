@@ -1,4 +1,67 @@
 <div class="main">
-  <app-main-carousel></app-main-carousel>
-  <app-games-carousel [list]="mockGamesList"></app-games-carousel>
+  <div class="main__wrapper">
+    <div class="main__info-wrapper">
+      <p><b>Прикладная форма</b></p>
+      <div class="main__btns">
+        <button type="button" class="main__btn" (click)="setValue('Кузьма')">Set Кузьма</button>
+        <button type="button" class="main__btn" (click)="setValue('Агафья')">Set Агафья</button>
+        <button type="button" class="main__btn" (click)="resetValue()">Reset</button>
+      </div>
+      <div class="main__info">
+        <div class="main__info-item">
+          <p class="main__info-title">parentForm:</p>
+          <p><b>Значение:</b>
+            {{parentForm.valueChanges | async | json}}
+          </p>
+          <p
+            [ngStyle]="{
+              'color': parentForm.invalid ? 'red' : 'green'
+            }">
+            <b>Статус:</b>
+            {{parentForm.statusChanges | async | json}}
+          </p>
+        </div>
+
+        <div class="main__info-item">
+          <p class="main__info-title">parentFormInput:</p>
+          <p><b>Значение:</b>
+            {{parentForm.get('parentFormInput')?.valueChanges | async | json}}
+          </p>
+          <p
+            [ngStyle]="{
+            'color': parentForm.get('parentFormInput')?.invalid ? 'red' : 'green'
+          }">
+            <b>Статус:</b>
+            {{parentForm.get('parentFormInput')?.statusChanges | async | json}}
+          </p>
+        </div>
+
+        <div class="main__info-item">
+          <p class="main__info-title">parentFormDropdown:</p>
+          <p><b>Значение:</b>
+            {{parentForm.get('parentFormDropdown')?.valueChanges | async | json}}
+          </p>
+          <p
+            [ngStyle]="{
+            'color': parentForm.get('parentFormDropdown')?.invalid ? 'red' : 'green'
+          }">
+            <b>Статус:</b>
+            {{parentForm.get('parentFormDropdown')?.statusChanges | async | json}}
+          </p>
+        </div>
+      </div>
+    </div>
+    <form [formGroup]="parentForm" class="main__form">
+      <app-test-input
+        formControlName="parentFormInput"
+      ></app-test-input>
+      <dropdown [options]="sortList"
+                label="Сортировка:"
+                formControlName="parentFormDropdown"></dropdown>
+    </form>
+  </div>
 </div>
+
+
+<!--  <app-main-carousel></app-main-carousel>-->
+<!--  <app-games-carousel [list]="mockGamesList"></app-games-carousel>-->

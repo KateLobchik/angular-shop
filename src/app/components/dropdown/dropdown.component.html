@@ -1,22 +1,38 @@
-<div class="games__sort-dropdown dropdown"
-     (click)="toggleMenu($event)"
-     [class.dropdown--active]="isOpenedMenu"
-     [attr.dropdown-active]="isOpenedMenu"
-     tabindex="0">
-  <p class="dropdown__label">{{label}}</p>
-  <p class="dropdown__select-item">{{selectOption?.label}}</p>
-  <ng-container *ngIf="isOpenedMenu">
-    <div class="dropdown__panel">
-      <ul class="dropdown__list">
-        <li *ngFor="let option of options">
-          <button type="button"
-                  class="dropdown__item dropdown__item-current"
-                  (click)="chooseOption(option)"
-          >
-            <span class="dropdown__item-name">{{option.label}}</span>
-          </button>
-        </li>
-      </ul>
+<div class="dropdown-wrapper">
+  <div class="dropdown-info-wrapper">
+    <p><b>ControlValueAccessor</b></p>
+    <div class="wrapper-drop">
+      <div class="games__sort-dropdown dropdown"
+           (click)="toggleMenu($event)"
+           [class.dropdown--active]="isOpenedMenu"
+           [attr.dropdown-active]="isOpenedMenu"
+           tabindex="0">
+        <p class="dropdown__label">{{label}}</p>
+        <p class="dropdown__select-item">{{selectOption?.label}}</p>
+        <ng-container *ngIf="isOpenedMenu">
+          <div class="dropdown__panel">
+            <ul class="dropdown__list">
+              <li *ngFor="let option of options">
+                <button type="button"
+                        class="dropdown__item dropdown__item-current"
+                        (click)="chooseOption(option)"
+                >
+                  <span class="dropdown__item-name">{{option.label}}</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </ng-container>
+      </div>
     </div>
-  </ng-container>
+
+    <div class="dropdown__info">
+      <div class="dropdown__info-item">
+        <p class="dropdown__info-title">Dropdown:</p>
+        <p><b>Значение:</b>
+          {{_selectOption | json}}
+        </p>
+      </div>
+    </div>
+  </div>
 </div>

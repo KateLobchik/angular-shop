@@ -1,3 +1,26 @@
+.dropdown-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  height: 100%;
+  padding: 1rem;
+  border: 3px solid #ff00ff;
+  box-sizing: border-box;
+}
+
+.dropdown-info-wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+}
+
+.wrapper-drop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .dropdown {
   display: flex;
   gap: 0.5rem;

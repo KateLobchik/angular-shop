@@ -1,5 +1,12 @@
 import {Component, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
+import {
+  AbstractControl,
+  ControlValueAccessor,
+  NG_VALIDATORS,
+  NG_VALUE_ACCESSOR,
+  ValidationErrors,
+  Validator
+} from "@angular/forms";
 
 @Component({
   selector: 'dropdown',
@@ -9,10 +16,15 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
     provide: NG_VALUE_ACCESSOR,
     multi: true,
     useExisting: DropdownComponent
-  }]
+  },
+    {
+      provide: NG_VALIDATORS,
+      useExisting: DropdownComponent,
+      multi: true,
+    },]
 })
 
-export class DropdownComponent implements ControlValueAccessor {
+export class DropdownComponent implements ControlValueAccessor, Validator {
   isOpenedMenu = false;
 
   propagateChange = (_: any) => {};
@@ -54,6 +66,19 @@ export class DropdownComponent implements ControlValueAccessor {
       evt.preventDefault();
     }
     this.isOpenedMenu = !this.isOpenedMenu;
+  }
+  validate(control: AbstractControl): ValidationErrors | null {
+    console.log("%c-------------  %s", 'color: #ff00ff', 'dropdown validate   ----------------');
+    console.log('control:', control);
+    console.log('errors:', control.errors);
+    console.log('status:', control.status);
+    console.log("%c---------------%s", 'color: #ff00ff', '------------------------------------');
+
+
+    if(control.value.label !== 'Новинки') {
+      return {"NoNEW": true};
+    }
+    return null;
   }
 }
 

@@ -8,7 +8,8 @@ import {MainCarouselModule} from "./components/main-carousel/main-carousel.modul
 import {CommonModule} from "@angular/common";
 import {CardModule} from "./components/card/card.module";
 import {DropdownModule} from "./components/dropdown/dropdown.module";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {TestInputModule} from "./components/test-input/test-input.module";
 
 const routes: Routes = [
   {
@@ -26,7 +27,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), GamesCarouselModule, MainCarouselModule, CommonModule, CardModule, DropdownModule, FormsModule],
+  imports: [RouterModule.forRoot(routes), GamesCarouselModule, MainCarouselModule, CommonModule, CardModule, DropdownModule, FormsModule, TestInputModule, ReactiveFormsModule],
   declarations: [
     MainPageComponent,
     AllGamesComponent,

@@ -1,0 +1,40 @@
+<div class="test-input">
+  <div class="test-input__info-wrapper">
+    <p><b>ControlValueAccessor с FormControl</b></p>
+    <form [formGroup]="customInputForm" class="test-input__form">
+      <input type="text" class="test-input__input" formControlName="customInput">
+    </form>
+
+    <div class="test-input__info">
+      <div class="test-input__info-item">
+        <p class="test-input__info-title">customInputForm:</p>
+        <p><b>Значение:</b>
+          {{customInputForm.valueChanges | async | json}}
+        </p>
+        <p
+          [ngStyle]="{
+              'color': customInputForm.invalid ? 'red' : 'green'
+            }">
+          <b>Статус:</b>
+          {{customInputForm.statusChanges | async | json}}
+        </p>
+      </div>
+
+      <div class="test-input__info-item">
+        <p class="test-input__info-title">customInput:</p>
+        <p><b>Значение:</b>
+          {{customInputForm.get('customInput')?.valueChanges | async | json}}
+        </p>
+        <p
+          [ngStyle]="{
+            'color': customInputForm.get('customInput')?.invalid ? 'red' : 'green'
+          }">
+          <b>Статус:</b>
+          {{customInputForm.get('customInput')?.statusChanges | async | json}}
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+</div>

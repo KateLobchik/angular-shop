@@ -1,0 +1,31 @@
+.test-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  height: 100%;
+  padding: 1rem;
+  border: 3px solid #d38520;
+  box-sizing: border-box;
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__info-wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+  }
+
+  &__info-item {
+    margin-bottom: 1rem;
+  }
+
+  &__info-title {
+    font-size: 1.2rem;
+    font-weight: bold
+  }
+}
